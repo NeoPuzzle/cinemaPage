@@ -1,0 +1,7 @@
+footer{
+    background-color: var(--gray-color);
+    color: var(--gray-color-dark);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}

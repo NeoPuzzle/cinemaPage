@@ -1,0 +1,69 @@
+/* Reset.css */
+
+/* Elementos de bloque */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Elementos en línea */
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+/* Elementos de lista */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Elementos de tabla */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Texto */
+body {
+    line-height: 1;
+}
+
+/* Formularios */
+button, input, select, textarea {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+button, input {
+    overflow: visible;
+}
+
+/* Botones */
+button, select {
+    text-transform: none;
+}
+
+/* Elementos misceláneos */
+textarea {
+    overflow: auto;
+}
+
+/* Personalización de enlaces */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* HTML5 display-role reset para versiones más antiguas de Internet Explorer */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+/* Ocultar elementos */
+[hidden] {
+    display: none;
+}
