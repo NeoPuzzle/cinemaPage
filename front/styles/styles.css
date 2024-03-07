@@ -1,8 +1,10 @@
 @import "./reset.css";
 @import "./common.css";
-@import "./color.css";
+@import "./color-3.css";
 @import "./header.css";
+@import "./panel.css";
 @import "./filter.css";
 @import "./container.css";
 @import "./footer.css";
 @import "./content-about.css";
+@import "./news.css";

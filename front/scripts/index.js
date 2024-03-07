@@ -1,12 +1,14 @@
 //console.log(tempData);
 
 function createMovie(movie) {
-    const card = document.createElement('div');
-        card.classList.add("movie-card");
+    const cards = document.createElement('div');
+        cards.classList.add("cards");
     
-        card.innerHTML = `
-        <img src="${movie.poster}" alt="${movie.title}" class="poster">
-        <div class="movie-info">
+        cards.innerHTML = `
+        <div class="face front">
+        <img src="${movie.poster}" alt="${movie.title}">
+        </div>
+        <div class="face back">
             <h3>${movie.title} (${movie.year})</h3>
             <p><strong>Director:</strong> ${movie.director}</p>
             <p><strong>Duration:</strong> ${movie.duration}</p>
@@ -15,18 +17,18 @@ function createMovie(movie) {
         </div>
         `;
 
-        return card;
+        return cards;
 }
 
 function addMovieToContainer(container, movies) {
     movies.forEach(movie => {
-        const card = createMovie(movie)
-        container.appendChild(card);
+        const cards = createMovie(movie)
+        container.appendChild(cards);
     });
 }
 
 
-const container = document.getElementById("container");
+const container = document.getElementById("container-movies");
 
 $.get("https://students-api.2.us-1.fl0.io/movies", data => {
     //console.log(data);

@@ -1,6 +1,6 @@
 footer{
-    background-color: var(--gray-color);
-    color: var(--gray-color-dark);
+    background-color: var(--gray-color-dark);
+    color: var(--gray-color);
     padding: 15px;
     display: flex;
     justify-content: center;

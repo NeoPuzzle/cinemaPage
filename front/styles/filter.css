@@ -1,10 +1,10 @@
 #filtro{
     display: flex;
     justify-content: center;
-    margin: 100px 0;
+    margin-top: 50px;
 }
 
-#filtro input{
+/* #filtro input{
     background-color: var(--secondary-color);
     color: var(--Secondary-color-dark);
-}
+} */

@@ -30,7 +30,7 @@ header{
     font-size: 30px;
 }
 
-#menu ul li a:hover, #menu ul li.active:hover{
+#menu ul li a:hover{
    color: var(--secondary-color);
    border-bottom: 5px solid var(--secondary-color-dark); 
 }

@@ -1,0 +1,7 @@
+.jumbotron{
+    background-color: var(--secondary-color-dark);
+}
+
+.card-text{
+    color: var(--secondary-color-dark);
+}
