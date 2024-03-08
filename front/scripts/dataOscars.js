@@ -8,7 +8,7 @@ const dataOscars = [
     {
         title: "IMDb Staff's 2024 Oscar Predictions",
         descrip: "Talk a look at our picks for frontrunners and major contenders in eight of the top Oscar categories.",
-        img: "https://m.media-amazon.com/images/M/MV5BZjQwYjU3OTYtMWVhMi00N2Y2LWEzMDgtMzViN2U4NWI1NmI3XkEyXkFqcGdeQXVyODk2NDQ3MTA@._V1_QL75_UX190_CR0,0,190,281_.jpg",
+        img: "https://www.laguiago.com/wp-content/uploads/2024/01/oppenheimer-pelicula-nolan.jpg",
         foo: "See our predictions"
     },
     {
@@ -36,3 +36,5 @@ const dataOscars = [
         foo: "See the winners"
     }
 ]
+
+ module.exports = {dataOscars};

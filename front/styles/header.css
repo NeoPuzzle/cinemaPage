@@ -2,6 +2,9 @@ header{
     display: flex;
     margin: 20px;
     justify-content: space-between;
+    padding: 5px;
+    border-radius: 0 5px 0 5px;
+    background-color: var(--secondary-color-dark);
 }
 
 #logo{
@@ -32,5 +35,5 @@ header{
 
 #menu ul li a:hover{
    color: var(--secondary-color);
-   border-bottom: 5px solid var(--secondary-color-dark); 
-}
+   /* border-bottom: 5px solid var(--secondary-color-dark);  */
+} 
