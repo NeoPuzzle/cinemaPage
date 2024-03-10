@@ -10,11 +10,16 @@ const mockGetItems = jest.fn(() => {
 
 
 describe("Carrito Compra", () => {
+    const carrito = new CarritoCompra(mockGetItems);
+
     it("La funcion 'getItems' debe ejecutarse al menos una vez", () => {
-        const carrito = new CarritoCompra(mockGetItems);
-        carrito.getItems();
         expect(mockGetItems).toHaveBeenCalled();
     });
-    it("Al llamar a la funcion agregarAlCarrito debe aumentar la cantidad de productos", () => {});
-    it("Al llamar a la funcion eliminarDelCarrito debe reducir la cantidad de productos", () => {});
-})
+    it("Al llamar a la funcion agregarAlCarrito debe aumentar la cantidad de productos", () => {
+        carrito.agregarAlCarrito('Producto 4', 10, 3);
+        expect(carrito.quantityProducts()).toBe(4);
+    });
+    it("La funcion calcularTotal suma los precios de los productos", () => {
+        expect(carrito.calcularTotal()).toBe(339.50);
+    })
+});
