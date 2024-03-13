@@ -37,4 +37,4 @@ const dataOscars = [
     }
 ]
 
- module.exports = {dataOscars};
+module.exports = dataOscars;
