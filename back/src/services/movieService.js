@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 class Movie {
-    constructor(title, year, director, duration, genre, rate, poster) {
+    constructor(title, director, year, duration, genre, rate, poster) {
         this.title = title;
         this.year = year;
         this.director = director;
@@ -12,14 +12,19 @@ class Movie {
     }
 }
 
-dataMovies = [];
+let dataMovies = [];
+
+const movieInstance = (movieData) => {
+    const { title, director, year, duration, genre, rate, poster } = movieData;
+    return new Movie(title, director, year, duration, genre, rate, poster);
+}
 
 
 const getMovies = async (req, res) => {
     try {
         const response = await axios.get('https://students-api.up.railway.app/movies');
-        const movies = response.data.map(movieData => new Movie(movieData.title, movieData.director, movieData.year, movieData.duration, movieData.genre, movieData.rate, movieData.poster));
-        res.status(200).send(movies);
+        dataMovies = response.data.map(movie => movieInstance(movie));
+        res.status(200).send(dataMovies);
     } catch (error) {
         res.status(500).json(error.message);  
         console.log("Error en el service", error.message);  
@@ -28,7 +33,10 @@ const getMovies = async (req, res) => {
 
 const setMovies = async (req, res) => {
     try {
+        const newMovieData = req.body;
+        const newMovie = movieInstance(newMovieData);
         const response = await axios.post('https://students-api.up.railway.app/movies', req.body);
+        dataMovies.push(newMovie);
         res.status(200).send(response.data);
     } catch (error) {
         res.status(500).json(error.message);  
@@ -37,7 +45,10 @@ const setMovies = async (req, res) => {
 }
 
 
+
 module.exports = { 
     getMovies,
     setMovies
 }
+
+
