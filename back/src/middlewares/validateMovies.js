@@ -1,11 +1,11 @@
-const validateParamQuery = (req, res, next) => {
-    const { title } = req.body;
+const validateParam = (req, res, next) => {
+    const { title, director, year, duration, genre, rate, poster } = req.body;
 
-    if (!title) {
-        return res.status(400).json({ error: 'El parámetro "title" es requerido.' });
-    }
+    if (!title || !director || !year || !duration || !genre || !rate || !poster) {
+        throw new Error("All fields are required");
+        }
 
     next();
 };
 
-module.exports = validateParamQuery;
+module.exports = validateParam;

@@ -1,46 +1,30 @@
+require("dotenv").config();
+const { BASE_URL } = process.env
 const axios = require('axios');
-
-class Movie {
-    constructor(title, director, year, duration, genre, rate, poster) {
-        this.title = title;
-        this.year = year;
-        this.director = director;
-        this.duration = duration;
-        this.genre = genre;
-        this.rate = rate;
-        this.poster = poster;
-    }
-}
+const {Movie} = require('../models/moviesClass');
+const moviesValidation = require('../utils/validaciones/moviesValidation');
 
 let dataMovies = [];
 
-const movieInstance = (movieData) => {
-    const { title, director, year, duration, genre, rate, poster } = movieData;
-    return new Movie(title, director, year, duration, genre, rate, poster);
-}
 
-
-const getMovies = async (req, res) => {
+const getMovies = async () => {
     try {
-        const response = await axios.get('https://students-api.up.railway.app/movies');
-        dataMovies = response.data.map(movie => movieInstance(movie));
-        res.status(200).send(dataMovies);
+        const {data: apiMovies} = await axios.get(BASE_URL);
+        const moviesFromApi  = apiMovies.map(movie => new Movie(movie));
+        const allMovies = [...dataMovies, ...moviesFromApi];
+        return allMovies;
     } catch (error) {
-        res.status(500).json(error.message);  
-        console.log("Error en el service", error.message);  
+        throw new Error(error.message); 
     }
 }
 
-const setMovies = async (req, res) => {
+const setMovies = async (newMovieData) => {
     try {
-        const newMovieData = req.body;
-        const newMovie = movieInstance(newMovieData);
-        const response = await axios.post('https://students-api.up.railway.app/movies', req.body);
+        const newMovie = new Movie(newMovieData);
         dataMovies.push(newMovie);
-        res.status(200).send(response.data);
+        return newMovie; 
     } catch (error) {
-        res.status(500).json(error.message);  
-        console.log("Error en el service", error.message);  
+        throw new Error(error.message); 
     }
 }
 
