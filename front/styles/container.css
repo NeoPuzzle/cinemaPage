@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     min-height: 70vh;
     background-color: var(--primary-color-dark);
 }
@@ -30,7 +31,7 @@
     position: relative;
     width: 300px;
     height: 350px;
-    margin: 0 20px;
+    margin: 20px;
 }
 
 .cards .face{

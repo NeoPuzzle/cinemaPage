@@ -16,17 +16,17 @@ const getClientMovies = async (req, res) => {
     }
 }
 
-const setClientMovies = async (req, res) => {
-    try {
-        const response = await getMoviesService.setMovies(req.body);
-        res.status(200).send(response);
-    } catch (error) {
-        res.status(500).json({error: error.message});  
-    } 
+// const setClientMovies = async (req, res) => {
+//     try {
+//         const response = await getMoviesService.setMovies(req.body);
+//         res.status(200).send(response);
+//     } catch (error) {
+//         res.status(500).json({error: error.message});  
+//     } 
 
-}
+// }
 
 module.exports = {
     getClientMovies,
-    setClientMovies
+    //setClientMovies
 }
