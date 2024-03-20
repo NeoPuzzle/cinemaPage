@@ -5,6 +5,6 @@ const validateParam = require("../middlewares/validateMovies");
 const moviesRouter = Router();
 
 moviesRouter.get("/", moviesController.getClientMovies);
-//moviesRouter.post("/", validateParam, moviesController.setClientMovies);
+moviesRouter.post("/", validateParam, moviesController.setClientMovies);
 
 module.exports = moviesRouter;

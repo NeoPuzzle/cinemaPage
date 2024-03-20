@@ -47,14 +47,14 @@ module.exports = {
             throw new Error(error.message);
         }
     },
-    // setMovies: async (newMovieData) => {
-    //     try {
-    //         const newMovie = new Movie(newMovieData);
-    //         await newMovie.save();
-    //         return newMovie;
-    //     } catch (error) {
-    //         throw new Error(error.message);
-    //     }
-    // }
+    setMovies: async (newMovieData) => {
+        try {
+            const newMovie = new Movie(newMovieData);
+            await newMovie.save();
+            return newMovie;
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    }
 };
 

@@ -1,5 +1,8 @@
 const axios = require("axios");
 const {addMovieToContainer} = require("./models/cardsMovie");
+const {savingData} = require("./models/formMovie");
+
+console.log(savingData.saveData);
 
 const container = document.getElementById("container-movies");
 
@@ -19,13 +22,23 @@ const fetchMovies = async () => {
         const data = await axios.get("http://localhost:3000/movies");
         addMovieToContainer(container, data.data);
     } catch (error) {
-        console.log(error.message);
+        throw new Error(error.message);
     }
     
 }
 
+const postMovie = async (movieData) => {
+    try {
+        const response = await axios.post("http://localhost:3000/movies", movieData);
+        console.log("Movie posted successfully:", response.data);
+        return response.data;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+};
+
 fetchMovies();
-//getMovies();
+postMovie(dataMovie.movieData);
 
 
 
