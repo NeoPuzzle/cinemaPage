@@ -12,6 +12,12 @@ const mockGetItems = jest.fn(() => {
 describe("Carrito Compra", () => {
     const carrito = new CarritoCompra(mockGetItems);
 
+    it("CarritoCompra deberia ser una clase", () => {
+        expect(typeof CarritoCompra.prototype.constructor).toBe('function')
+    });
+    it("carrito deberia ser una instancia de la clase CarritoCompra", () => {
+        expect(carrito instanceof CarritoCompra).toBe(true);
+    });
     it("La funcion 'getItems' debe ejecutarse al menos una vez", () => {
         expect(mockGetItems).toHaveBeenCalled();
     });
@@ -21,5 +27,6 @@ describe("Carrito Compra", () => {
     });
     it("La funcion calcularTotal suma los precios de los productos", () => {
         expect(carrito.calcularTotal()).toBe(339.50);
-    })
+    });
+    it("El metodo aplicarDescuento deberia poder aplicar un descuento al total de la compra", () => {})
 });

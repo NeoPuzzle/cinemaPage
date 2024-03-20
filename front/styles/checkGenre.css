@@ -1,0 +1,12 @@
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px; /* Espacio entre los checkbox */
+}
+
+.checkbox-container label {
+    margin-right: 15px; /* Espacio entre las etiquetas de los géneros */
+}

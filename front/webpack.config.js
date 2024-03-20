@@ -1,8 +1,12 @@
 module.exports = {
-    entry:['./scripts/index.js', './scripts/news.js'],
+    entry:{
+        index: "./scripts/index.js",
+        news: "./scripts/news.js",
+        film: "./scripts/models/formMovie.js",
+    },
 
     output: {
         path: __dirname + "/public",
-        filename: "bundle.js",
+        filename: "[name].js",
     },
 };
