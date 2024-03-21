@@ -1,5 +1,5 @@
-const genres = require('../data/genres');
-const postMovie = require('./formMovie');
+const genres = require('../data/dataGenre');
+const { postMovie } = require('../index');
 const formatTimeCardMovie = require('../helpers/formatTime');
 
 

@@ -28,7 +28,7 @@ function renderCards(dataOscars, containerId) {
     dataOscars.forEach(data => {
         const card = createCard(data);
         const cardContainer = createCardContainer(card);
-        container.appendChild(cardContainer);
+        container?.appendChild(cardContainer);
     });
 }
 

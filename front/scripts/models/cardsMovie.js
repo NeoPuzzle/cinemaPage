@@ -21,7 +21,7 @@ function createMovie(movie) {
 function addMovieToContainer(container, movies) {
     movies.forEach(movie => {
         const cards = createMovie(movie)
-        container.appendChild(cards);
+        container?.appendChild(cards);
     });
 }
 
